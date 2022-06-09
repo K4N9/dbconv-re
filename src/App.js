@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component, useEffect, useState} from 'react';
+import axios from 'axios';
+import { render } from '@testing-library/react';
+import { useSearchParams } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+import Pay from './Components/Pay';
+import Stock from './Components/Stock';
+// import Store from './Components/Store';
+// import Manage from './Components/Manage';
+
+// property = props
+
+
+class Subject extends Component{
+  render(){
+    return(
+      <header>
+      <h1>DATABASE CONV PROJECT</h1>
       </header>
-    </div>
-  );
+    );
+  }
 }
 
+class App extends Component{ 
+  render(){
+    return(
+      <div>
+        <Subject />
+        <Stock />
+      </div>
+    );
+  }
+}
 export default App;

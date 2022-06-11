@@ -5,6 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import Pay from './Components/Pay';
 import Stock from './Components/Stock';
+import PayContext from './Components/PayContext'
 // import Store from './Components/Store';
 // import Manage from './Components/Manage';
 
@@ -25,8 +26,9 @@ class App extends Component{
   render(){
     return(
       <div>
-        <Subject />
-        <Stock />
+        {/* <Subject />
+        <Stock /> */}
+        <PayContext query = {[{transaction : "requestStock"}, {transaction : "pay"}]}/>
       </div>
     );
   }

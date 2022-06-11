@@ -34,11 +34,11 @@ function stockMem(){
 }
 
 function createNumber(){
-    return <input type="number" id={props.no} min="0" />
+    return <input type="number" min="0" />
 }
 
 function createButton(){
-    return <button id={props.no} onClick={}></button>
+    return <button onClick={() => {}}></button>
 }
 
 
@@ -116,7 +116,7 @@ class STOCK extends Component{
                     <tfoot>
                         <tr>
                             <th>
-                            <button onClick={Pay}>결제하기</button>
+                            <button >결제하기</button>
                                 
                             </th>
                         </tr>

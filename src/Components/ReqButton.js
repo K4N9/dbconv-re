@@ -10,7 +10,7 @@ class ReqButton extends React.Component{
 
     handleReq = async () => {
         const response = await axios.post(
-            'http://localhost:3000',
+            'http://119.192.46.84:80/',
             this.props.query
         );
         if(this.props.updateData != null)

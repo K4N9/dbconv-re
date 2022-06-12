@@ -14,12 +14,13 @@ class Table extends React.Component{
                         <tbody>
                             {(this.props.data != null && this.props.button == false) ? this.props.data.rows.map((element) => <ContentRow data = {element}/>) : null}
                             {(this.props.data != null && this.props.button == true) ? this.props.data.rows.map((element) => <ButtonRow data = {element} updateList = {this.props.updateList}/>) : null}
+                           
                         </tbody>
                     </table>
                 </>
     }
 }
- 
+
 class ContentRow extends React.Component{
     constructor(props){
         super(props);

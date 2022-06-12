@@ -17,7 +17,6 @@ class DropBox extends React.Component{
         super(props);
 
         this.state={paytype: null}
-
         this.updatePayinfo = this.updatePayinfo.bind(this);
     }
 

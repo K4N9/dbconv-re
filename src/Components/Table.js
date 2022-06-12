@@ -12,9 +12,9 @@ class Table extends React.Component{
                             {this.props.data != null ? <HeaderRow data = {this.props.data.metaData}></HeaderRow> : null}
                         </thead>
                         <tbody>
-                            {(this.props.data != null && this.props.button == false) ? this.props.data.rows.map((element) => <ContentRow data = {element}/>) : null}
-                            {(this.props.data != null && this.props.button == true) ? this.props.data.rows.map((element) => <ButtonRow data = {element} updateList = {this.props.updateList}/>) : null}
-                           
+                            {(this.props.data != null && this.props.button == 0) ? this.props.data.rows.map((element) => <ContentRow data = {element}/>) : null}
+                            {(this.props.data != null && this.props.button == 1) ? this.props.data.rows.map((element) => <ButtonRow data = {element} updateList = {this.props.updateList}/>) : null}
+                            {(this.props.data != null && this.props.button == 2) ? this.props.data.rows.map((element) => <ButtonRow2 data = {element} updateList = {this.props.updateList}/>) : null}
                         </tbody>
                     </table>
                 </>
@@ -55,6 +55,24 @@ class ButtonRow extends React.Component{
                      {this.props.data.map((element) => <td>{element}</td>)}
                      <PutInButton amount = {this.state.amount} setAmount = {this.setAmount} updateList = {this.updateList}></PutInButton>
                 </tr>
+    }
+}
+
+class ButtonRow2 extends React.Component{
+    constructor(props){
+        super(props);
+        this.updateList = this.updateList.bind(this);
+    }
+
+    updateList = () => {
+        this.props.updateList(this.props.data);
+    }
+
+    render() {
+        return <tr>
+            {this.props.data.map((element) => <td>{element}</td>)}
+            <td><button onClick={this.updateList}>수령</button></td>
+        </tr>
     }
 }
 

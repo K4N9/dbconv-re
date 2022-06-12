@@ -24,9 +24,10 @@ class DebugContext extends React.Component{
     render() {
         let tableData = (this.state.tableNo != null) ? this.state.tableData[this.state.tableNo] : null; 
         return  <>
+                    <h2>DB 테이블</h2>
                     <ReqButton updateData = {this.updateData} query = {{transaction: "reqDebug"}}>getTable</ReqButton>
                     <DropBox data = {this.state.tableName} updatePayinfo = {this.updateTableNo}></DropBox>
-                    <Table data = {tableData} button = {false}/>
+                    <Table data = {tableData} button = {0}/>
                 </>
     }
 }

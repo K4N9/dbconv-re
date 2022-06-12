@@ -92,7 +92,8 @@ class ReqruitContext extends React.Component{
             <h3>인적사항</h3>
             <EmpInfo updateEmpnm = {this.updateEmpnm} updateEmpadr = {this.updateEmpadr} updatePhoneno = {this.updatePhoneno} updatePersonalno = {this.updatePersonalno}
                      updateGotm = {this.updateGotm} updateLeavetm = {this.updateLeavetm} updateEmpwage = {this.updateEmpwage} value = {this.state}/>
-            <ReqButton updateDAte = {null} query = {body}>Reqruit</ReqButton>          
+            <ReqButton updateDAte = {null} query = {body}>Reqruit</ReqButton>   
+
         </>
     }
 
@@ -101,6 +102,14 @@ class ReqruitContext extends React.Component{
 class EmpInfo extends React.Component{
     constructor(props){
         super(props);
+
+        this.updateEmpnm = this.updateEmpnm.bind(this);
+        this.updateEmpadr = this.updateEmpadr.bind(this);
+        this.updatePhoneno = this.updatePhoneno.bind(this);
+        this.updatePersonalno = this.updatePersonalno.bind(this);
+        this.updateGotm = this.updateGotm.bind(this);
+        this.updateLeavetm = this.updateLeavetm.bind(this);
+        this.updateEmpwage = this.updateEmpwage.bind(this);
     }
 
     updateEmpnm = (event) => {

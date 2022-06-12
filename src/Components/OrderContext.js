@@ -33,6 +33,7 @@ class OrderContext extends React.Component{
             list : list
         }
         return <> 
+                    <h2>재고주문</h2>
                    <ReqButton query = {{transaction : "reqMakeOrder"}} updateData = {this.updateTableData}>reqCommodity</ReqButton>
                    <Table data = {this.state.tableData} button = {true} updateList = {this.updateListData}/>
                    <OrderList listData = {this.state.listData}></OrderList>

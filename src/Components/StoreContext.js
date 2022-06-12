@@ -30,8 +30,8 @@ class StoreContext extends React.Component{
         this.setState({storesize : event.target.value});
     }
 
-    reunder() {
-        body = {
+    render() {
+        let body = {
             transaction: this.props.query[0].transaction,
             storenm: this.state.storenm,
             storeadr: this.state.storeadr,
@@ -44,7 +44,8 @@ class StoreContext extends React.Component{
             <li>지점주소: <input type="text" value={this.state.storeadr} onChange={this.updateStoreadr}/></li>
             <li>전화번호: <input type="text" value={this.state.phoneno} onChange={this.updatePhoneno}/></li>
             <li>지점규모: <input type="text" value={this.state.storesize} onChange={this.updateStoresize}/></li>
-            <ReqButton updateData={null} query={body}>Store</ReqButton>
+            <ReqButton updateData={null} query={body}>Open</ReqButton>
+            <br /><br />
         </>
     }
 

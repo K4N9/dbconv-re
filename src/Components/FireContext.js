@@ -7,55 +7,34 @@ class FireContext extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {data: null, storeno: "1", empnm: "", empno: ""};
-        this.updataData = this.updataData.bind(this);
-        this.updateStoreno = this.updateStoreno.bind(this);
-        this.updateEmpnm = this.updateEmpnm.bind(this);
+        this.state = {data: null, empno: 1};
+        this.updateData = this.updateData.bind(this);
         this.updateEmpno = this.updateEmpno.bind(this);
     }
 
-    updataData = (response) => {
+    updateData = (response) => {
         this.setState({data : response.data});
+        console.log("dropbox"+response.data);
     }
 
-    updateStoreno = (element) => {
-        this.setState({data : element});
-    }
-
-    updateEmpnm = (event) => {
-        this.setState({empnm : event.target.value})
-    }
-
-    updateEmpno = (event) => {
-        this.setState({empno : event.target.value})
+    updateEmpno = (element) => {
+        this.setState({empno : element})
     }
 
     render() {
-        let data = null;
-
-        if(this.state.data != null){
-            data = this.state.data[0];
-        }
-
-        body = {
-            transaction: this.props.query[0].transaction,
-            employeenm: this.state.empnm
-        }
-
-        body2 = {
+        let body = {
             transaction: this.props.query[1].transaction,
-            employeenm: this.state.empnm,
             employeeno: this.state.empno
         }
 
         return <>
+            <br />
             <h2>직원해고</h2>
-            <li>직원이름: <input type="text" value = {this.state.empnm} onChange = {this.updateEmpnm}/></li>
-            <ReqButton updataData = {this.updataData} query = {body}>requestFire</ReqButton>
-            {/* (metaData, rows) -> EMPLOYEE_TB */}
-            <Table data = {data} button = {false} updateList = {null}/>
-            <li>직원번호: <input type="text" value = {this.state.empno} onChange = {this.updateEmpno}/></li>
-            <ReqButton updateData = {null} query = {body2}>Fire</ReqButton>
+            <ReqButton updateData = {this.updateData} query = {this.props.query[0]}>requestFire</ReqButton>
+            <DropBox data = {this.state.data} updatePayinfo = {this.updateEmpno} paytype = {false}/>
+            <br /><br />
+            <ReqButton updateData = {null} query = {body}>Fire</ReqButton>
+            <br /><br />
         </>
     }
 }

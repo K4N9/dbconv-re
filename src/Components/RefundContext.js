@@ -48,7 +48,7 @@ class RefundContext extends React.Component{
         }
 
         return <>
-            <h2>Refund</h2>
+            <h2>환불</h2>
             <input type="text" onChange={this.updatePayno}/>
             <ReqButton updateData = {this.updateData} query = {body}>requestPay</ReqButton>
             {/* data = {(metaData, rows) -> PAY_TB, (metaData, rows) -> PAY_STOCK_TB}? */}

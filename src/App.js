@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import PayContext from './Components/PayContext';
 import RefundContext from './Components/RefundContext';
-import ManageContext from './Components/ManageContext';
+import ReqruitContext from './Components/ReqruitContext';
 // import Store from './Components/Store';
 // import Manage from './Components/Manage';
 
@@ -29,7 +29,7 @@ class App extends Component{
         <Stock /> */}
         <PayContext query = {[{transaction : "requestStock"}, {transaction : "pay"}]}/>
         <RefundContext query = {[{transaction: "reqRefund"}, {transaction : "refund"}]}/>
-        {/* <ManageContext query = {[{transaction: "reqManage"}]}/> */}
+        <ReqruitContext query = {[{transaction: "reqReqruit"}, {transaction : "reqruit"}]}/>
       </div>
     );
   }

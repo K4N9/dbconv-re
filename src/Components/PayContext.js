@@ -69,8 +69,8 @@ class PayContext extends React.Component{
         return  <>
                     <ReqButton updateData = {this.updateData} query = {this.props.query[0]}>requestStock</ReqButton>
                     <Table data = {data} button = {true} updateList = {this.updateList}/>
-                    <DropBox updateList = {this.updateList} data = {data2} updatePayinfo = {this.updateStoreno} paytype = {false}/>
-                    <DropBox updateList = {this.updateList}  data = {data3} updatePayinfo = {this.updatePaytype} paytype = {true}/>
+                    <DropBox data = {data2} updatePayinfo = {this.updateStoreno} paytype = {false}/>
+                    <DropBox data = {data3} updatePayinfo = {this.updatePaytype} paytype = {true}/>
                     <input type="text" value={this.state.cardno} onChange = {this.updateCardno}/>
                     <Receipt list = {this.state.list}/>
                     <ReqButton updateData = {this.updateData2} query = {body}>Pay</ReqButton>

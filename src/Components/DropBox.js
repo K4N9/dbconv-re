@@ -17,6 +17,8 @@ class DropBox extends React.Component{
         super(props);
 
         this.state={paytype: null}
+
+        this.updatePayinfo = this.updatePayinfo.bind(this);
     }
 
     updatePayinfo = (event) =>{
@@ -29,7 +31,7 @@ class DropBox extends React.Component{
     render() {
 
         return <>
-            <select onChange={this.updatePayinfo}>
+            <select  onChange={this.updatePayinfo}>
                 {(this.props.data != null) ? this.props.data.map((element) => <ContentDrop data={element} />) : null}
             </select>
         </>
